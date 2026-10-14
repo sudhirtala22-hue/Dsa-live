@@ -17,7 +17,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-MODEL = "gemini-live-2.5-flash-preview"
+MODEL = "gemini-2.5-flash-native-audio-preview-09-2025"
 
 def build_config(resume_handle: str | None = None) -> types.LiveConnectConfig:
     return types.LiveConnectConfig(
