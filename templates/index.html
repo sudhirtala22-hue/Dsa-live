@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Das — Live</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box;
+      font-family:'Noto Sans Gujarati','Segoe UI',sans-serif; }
+  body {
+    background:linear-gradient(135deg,#fdf6e3,#f5e6c8);
+    min-height:100vh; display:flex; justify-content:center;
+    align-items:center; padding:12px;
+  }
+  .box {
+    width:100%; max-width:720px; height:92vh; background:#fffdf7;
+    border-radius:20px; box-shadow:0 10px 40px rgba(180,140,60,.2);
+    display:flex; flex-direction:column; overflow:hidden;
+  }
+  header {
+    background:linear-gradient(135deg,#d97706,#b45309); color:#fff;
+    padding:16px 20px; display:flex; align-items:center; gap:14px;
+  }
+  header .avatar {
+    font-size:30px; width:48px; height:48px; background:rgba(255,255,255,.2);
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+  }
+  header h1 { font-size:20px; }
+  header p  { font-size:13px; opacity:.9; }
+  #statusDot {
+    margin-left:auto; width:12px; height:12px; border-radius:50%;
+    background:#9ca3af; transition:.3s;
+  }
+  #statusDot.on   { background:#22c55e; box-shadow:0 0 12px #22c55e; }
+  #statusDot.busy { background:#f59e0b; box-shadow:0 0 12px #f59e0b; }
+  #statusDot.err  { background:#ef4444; box-shadow:0 0 12px #ef4444; }
+  #status {
+    padding:10px 20px; font-size:13px; color:#92400e; background:#fef9ec;
+    border-bottom:1px solid #f0e0c0; min-height:20px; font-weight:600;
+  }
+  #transcript { flex:1; overflow-y:auto; padding:18px; }
+  .line { margin-bottom:14px; max-width:85%; }
+  .line .who { font-weight:700; font-size:12px; opacity:.65; margin-bottom:4px; }
+  .line .text {
+    padding:10px 14px; border-radius:14px; font-size:15px;
+    line-height:1.6; white-space:pre-wrap;
+  }
+  .line.das .text  { background:#fef3c7; color:#422006;
+                     border-bottom-left-radius:4px; }
+  .line.user       { margin-left:auto; text-align:right; }
+  .line.user .text { background:#d97706; color:#fff;
+                     border-bottom-right-radius:4px;
+                     display:inline-block; text-align:left; }
+  #controls {
+    padding:14px; border-top:1px solid #f0e0c0;
+    display:flex; gap:12px; background:#fffdf7;
+  }
+  button {
+    flex:1; padding:14px; border:none; border-radius:30px;
+    font-size:16px; font-weight:700; cursor:pointer;
+    background:linear-gradient(135deg,#d97706,#b45309);
+    color:#fff; transition:.2s;
+  }
+  button:hover:not(:disabled) { transform:scale(1.02); }
+  button:disabled { opacity:.4; cursor:not-allowed; }
+  button.stop { background:linear-gradient(135deg,#dc2626,#991b1b); }
+  @media (max-width:600px) { .box { height:100vh; border-radius:0; } }
+</style>
+</head>
+<body>
+<div class="box">
+  <header>
+    <div class="avatar">🕉️</div>
+    <div>
+      <h1>Das</h1>
+      <p>તમારો દાસ અને અધ્યાત્મિક સાથી</p>
+    </div>
+    <div id="statusDot"></div>
+  </header>
+
+  <div id="status">તૈયાર — "શરૂ કરો" દબાવો.</div>
+  <div id="transcript"></div>
+
+  <div id="controls">
+    <button id="startBtn">🎤 શરૂ કરો</button>
+    <button id="stopBtn" class="stop" disabled>⏹️ બંધ કરો</button>
+  </div>
+</div>
+
+<script src="/static/live.js"></script>
+</body>
+</html>

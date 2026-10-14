@@ -1,0 +1,4 @@
+fastapi
+uvicorn[standard]
+google-genai>=2.3.0
+python-dotenv
