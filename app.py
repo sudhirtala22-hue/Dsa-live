@@ -33,7 +33,7 @@ def build_config(resume_handle: str | None = None) -> types.LiveConnectConfig:
                     voice_name="Aoede"
                 )
             ),
-            language_code="gu-IN",
+           
         ),
         input_audio_transcription=types.AudioTranscriptionConfig(),
         output_audio_transcription=types.AudioTranscriptionConfig(),
