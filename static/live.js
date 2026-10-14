@@ -136,9 +136,9 @@ function connectWS() {
 
   ws.onclose = () => {
     setStatus("🔴 કનેક્શન બંધ", "err");
-    if (isRunning && reconnectAttempts < 5) {
+    if (isRunning && reconnectAttempts < 20) {
       reconnectAttempts++;
-      const delay = resumeToken ? 1000 : 2500 * reconnectAttempts;
+      const delay = resumeToken ? 500 : 1500 * reconnectAttempts;
       setStatus(`🔄 ફરી જોડાઈ રહ્યું છે... (${reconnectAttempts}/5)`, "busy");
       setTimeout(connectWS, delay);
     }
